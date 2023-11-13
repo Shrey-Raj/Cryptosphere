@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoNewsHeaders = {
   'content-type': 'application/json',
-  'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-  'X-RapidAPI-Host': process.env.REACT_APP_NEWS_HOST
+  'X-RapidAPI-Key':  import.meta.env.VITE_API_KEY,
+  'X-RapidAPI-Host': import.meta.env.VITE_NEWS_HOST
 };
 
 const baseUrl = "https://newsnow.p.rapidapi.com";

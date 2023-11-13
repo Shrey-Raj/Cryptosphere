@@ -8,9 +8,9 @@ import "antd/dist/reset.css";
 import store from "./app/store";
 import "aos/dist/aos.css";
 import AOS from 'aos';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
-dotenv.config();
+// dotenv.config();
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -34,36 +34,36 @@ const HomePage = () => {
             title={
             <span style={{ color: "var(--green-blue)" }}>Total Cryptocurrencies</span>
             }
-            value={millify(globalStats.total)}
+            value={millify(globalStats?.total)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title={<span style={{color:"var(--green-blue)"}}>Total Exchanges</span>}
-            value={millify(globalStats.totalExchanges)}
+            value={millify(globalStats?.totalExchanges)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title={<span style={{color:"var(--green-blue)"}}>Total Market Cap</span>}
-            value={millify(globalStats.totalMarketCap)}
+            value={millify(globalStats?.totalMarketCap)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title={<span style={{color:"var(--green-blue)"}}>Total 24h Volume</span>}
-            value={millify(globalStats.total24hVolume)}
+            value={millify(globalStats?.total24hVolume)}
           />
         </Col>
         <Col span={12}>
           <Statistic 
           title={<span style={{color:"var(--green-blue)"}}>Total Cryptocurrencies</span>}
-          value={millify(globalStats.total)} />
+          value={millify(globalStats?.total)} />
         </Col>
         <Col span={12}>
           <Statistic
           title={<span style={{color:"var(--green-blue)"}}>Total Markets</span>}
-            value={millify(globalStats.totalMarkets)}
+            value={millify(globalStats?.totalMarkets)}
           />
         </Col>
       </Row>
