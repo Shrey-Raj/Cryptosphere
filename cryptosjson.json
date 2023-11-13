@@ -1,0 +1,64 @@
+{
+  "coins": [
+      {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "color": "#f7931A",
+        "iconUrl": "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg"
+      },
+      {
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "color": "#3C3C3D",
+        "iconUrl": "https://cdn.coinranking.com/rk4RKHOuW/eth.svg"
+      },
+      {
+        "symbol": "USDT",
+        "name": "Tether USD",
+        "color": "#22a079",
+        "iconUrl": "https://cdn.coinranking.com/mgHqwlCLj/usdt.svg"
+      },
+      {
+        "symbol": "BNB",
+        "name": "BNB",
+        "color": "#e8b342",
+        "iconUrl": "https://cdn.coinranking.com/B1N19L_dZ/bnb.svg"
+      },
+      {
+        "symbol": "XRP",
+        "name": "XRP",
+        "color": "#000000",
+        "iconUrl": "https://cdn.coinranking.com/B1oPuTyfX/xrp.svg"
+      },
+      {
+        "symbol": "USDC",
+        "name": "USDC",
+        "color": "#7894b4",
+        "iconUrl": "https://cdn.coinranking.com/jkDf8sQbY/usdc.svg"
+      },
+      {
+        "symbol": "SOL",
+        "name": "Solana",
+        "color": "#000",
+        "iconUrl": "https://cdn.coinranking.com/yvUG4Qex5/solana.svg"
+      },
+      {
+        "symbol": "OKB",
+        "name": "OKB",
+        "color": "#2d60e0",
+        "iconUrl": "https://cdn.coinranking.com/xcZdYtX6E/okx.png"
+      },
+      {
+        "symbol": "ADA",
+        "name": "Cardano",
+        "color": "#3cc8c8",
+        "iconUrl": "https://cdn.coinranking.com/ryY28nXhW/ada.svg"
+      },
+      {
+        "symbol": "DOGE",
+        "name": "Dogecoin",
+        "color": "#c2a633",
+        "iconUrl": "https://cdn.coinranking.com/H1arXIuOZ/doge.svg"
+      }
+    ]
+}
