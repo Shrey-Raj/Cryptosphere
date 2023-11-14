@@ -12,6 +12,9 @@ dist-ssr
 *.local
 Learning.txt
 .env
+coinHistoryjson.json
+cryptosjson.json
+jsondata.json
 
 # Editor directories and files
 .vscode/*
