@@ -7,10 +7,10 @@ import demoImage from "../images/news-icon.png"; // Import your demo image path
 const { Text, Title } = Typography;
 const { Search } = Input;
 
-// import cryptoNews from '../../jsondata.json' ; // for local use 
+import cryptoNews from '../../jsondata.json' ; // for local use 
 
 const News = ({ simplified }) => {
-  const {data : cryptoNews,isFetching}  = useGetCryptoNewsQuery();
+  // const {data : cryptoNews,isFetching}  = useGetCryptoNewsQuery();  // I have surpassed the free limit of the NewsAPI I was using i.e. 50 requests/month
 
   const [NewsData, setNewsData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -35,9 +35,9 @@ const News = ({ simplified }) => {
   }, [cryptoNews, simplified, searchTerm]);
 
 
-  if(isFetching){
-    return <LoadingCard></LoadingCard> ;
-  }
+  // if(isFetching){
+  //   return <LoadingCard></LoadingCard> ;
+  // }
 
   return (
     <>

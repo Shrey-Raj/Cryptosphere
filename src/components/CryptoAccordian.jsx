@@ -7,14 +7,16 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name) => (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className='exchanges-icon-name' style={{ display: 'flex', alignItems: 'center' }}>
         <img
           src={name.iconUrl}
           style={{ maxWidth: 20, minWidth: 20, marginRight: '1rem' }}
           alt={name.name}
         />
-        <Typography.Title level={5} style={{ margin: '0' }}>
-          {name.coinName}
+        <Typography.Title 
+        level={3} 
+        style={{ margin: '0', fontSize:'1rem' }}>
+          <span className='exchanges-col-name'>{name.coinName}</span>
         </Typography.Title>
       </div>
     ),
@@ -33,6 +35,14 @@ const columns = [
     title: 'BTC Price',
     dataIndex: 'btcPrice',
     key: 'btcPrice',
+    responsive: ['sm'], // Hide for screen size below 600px
+    onHeaderCell: (column) => {
+      return {
+        style: {
+          // color:'red' 
+        },
+      };
+    },
   },
   {
     title: 'Price',
@@ -41,7 +51,7 @@ const columns = [
   },
 ];
 
-const CryptoAccordian = ({ data }) => (
+const CryptoAccordion = ({ data }) => (
   <Table
     columns={columns}
     dataSource={data}
@@ -49,5 +59,4 @@ const CryptoAccordian = ({ data }) => (
   />
 );
 
-export default CryptoAccordian;
-
+export default CryptoAccordion;

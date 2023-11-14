@@ -1,6 +1,4 @@
-//follow this yt video for Making Line Chart : https://youtu.be/ueA1BGfqgyk
-
-import React , {useEffect} from "react";
+import React, { useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { Col, Row, Typography } from "antd";
 
 ChartJS.register(
   CategoryScale,
@@ -23,63 +22,76 @@ ChartJS.register(
   Legend
 );
 
-import { Col, Row, Typography } from "antd";
+const LineChart = ({ coinHistory, currentPrice, coinName, changePercent }) => {
+  useEffect(() => {
+    console.log(coinHistory);
+  }, [coinHistory]);
 
-// import coinHistory from "../../coinHistoryjson.json";
+  const coinPrice = [];
+  const coinTimestamp = [];
 
-const LineChart = ({coinHistory, currentPrice, coinName,changePercent}) => {
+  for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+    coinPrice.push(coinHistory?.data?.history[i].price);
+  }
 
-
-    useEffect(()=>{
-        console.log(coinHistory)
-    },[coinHistory])
-
-    const coinPrice = [];
-    const coinTimestamp = [];
-  
-    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-      coinPrice.push(coinHistory?.data?.history[i].price);
-    }
-  
-    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-        const timestamp = coinHistory?.data?.history[i].timestamp;
-        const date = new Date(timestamp * 1000).toLocaleDateString();
-        const time = new Date(timestamp * 1000).toLocaleTimeString();
-        coinTimestamp.push(`${date} ${time}`);
-      }
-      coinTimestamp.sort((a, b) => new Date(a) - new Date(b));
-
+  for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+    const timestamp = coinHistory?.data?.history[i].timestamp;
+    const date = new Date(timestamp * 1000).toLocaleDateString();
+    const time = new Date(timestamp * 1000).toLocaleTimeString();
+    coinTimestamp.push(`${date} ${time}`);
+  }
+  coinTimestamp.sort((a, b) => new Date(a) - new Date(b));
 
   const data = {
-    labels:coinTimestamp,
+    labels: coinTimestamp,
     datasets: [
       {
         label: "Price in USD",
         data: coinPrice,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
-      }
+      },
     ],
   };
 
-
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        display:true,
-        position: 'top',
-        align:'right'
+        display: true,
+        position: "top",
+        align: "right",
       },
       title: {
         display: true,
-        font:{size:25}
+        font: { size: 25 },
+      },
+    },
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: "Timestamp",
+        },
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: "Price in USD",
+        },
       },
     },
   };
 
+  const containerStyles = {
+    
+  };
+
   return (
-    <>
+    <div className="line-chart">
       <Row className="chart-header">
         <Typography.Title level={2} className="chart-title">
           {coinName} Price Chart
@@ -94,7 +106,7 @@ const LineChart = ({coinHistory, currentPrice, coinName,changePercent}) => {
         </Col>
       </Row>
       <Line data={data} options={options} />
-    </>
+    </div>
   );
 };
 
