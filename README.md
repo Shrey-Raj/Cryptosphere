@@ -70,7 +70,7 @@ Follow these steps to set up and run the Cryptosphere React App locally:
    npm run dev
    ```
 
-   The app will be accessible at [http://localhost:3000/](http://localhost:3000/).
+   The app will be accessible at [http://localhost:3000/](http://localhost:5173/).
 
 ## Live Demo
 
