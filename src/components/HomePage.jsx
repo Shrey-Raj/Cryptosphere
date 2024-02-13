@@ -6,6 +6,16 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Cryptocurrencies, News,LoadingCard } from "./components";
 import AOS from 'aos' ;
 
+import coinsList from '../../coinsListResult.json' ;
+
+const newCoinsList = coinsList.data.coins.map(coin => ({
+   uuid : coin.uuid,
+   symbol : coin.symbol,
+   name : coin.name,
+   color : coin.color,
+   iconUrl : coin.iconUrl
+}));
+console.log(newCoinsList) ;
 
 // so that we dont need to use <Typography.Title> again and again
 const { Title } = Typography;
@@ -94,3 +104,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

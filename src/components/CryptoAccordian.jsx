@@ -59,4 +59,16 @@ const CryptoAccordion = ({ data }) => (
   />
 );
 
-export default CryptoAccordion;
+export default CryptoAccordion ;
+//
+
+
+// useEffect(()=>{
+//   console.log('mkdmf') ; 
+  
+//   return ()=>{
+//     // nklndlf 
+//   }
+
+// },[])
+

@@ -29,7 +29,7 @@ const { Option } = Select;
 const CryptoDetails = () => {
   const { coinId } = useParams();
   const [timeperiod, setTimeperiod] = useState("24h");
-  const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data, isFetching } = useGetCryptoDetailsQuery(coinId) ; 
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     coinId,
     timeperiod,

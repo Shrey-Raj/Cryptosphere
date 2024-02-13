@@ -5,11 +5,13 @@ import {
 } from "../services/cryptoApi";
 import { LoadingCard } from "./components.js";
 import ExchangesTable from "./ExchangesTable.jsx";
+import CoinsList from '../../newCoinsList.json' ; 
 
 const { Option } = Select;
 
 const Exchanges = () => {
-  const { data, isFetching } = useGetCryptosQuery(100);
+  var isFetching = false ;
+  // const { data, isFetching } = useGetCryptosQuery(100);
   const fontSize = 18;
   const uuidBitcoin = "Qwsogvtv82FCd";
 
@@ -18,8 +20,11 @@ const Exchanges = () => {
 
   var cryptos = [];
   if (!isFetching) {
-    cryptos = data?.data?.coins;
-    // console.log("cryptos");
+    // cryptos = data?.data?.coins;
+
+    // since the API for exchanges has been made 'PAID' , so I am using a local file , corresponding to only those coins , I have exchanges in a new file 
+    cryptos = CoinsList ; 
+    console.log("cryptos" , cryptos); 
   } else {
     return <LoadingCard></LoadingCard>;
   }
